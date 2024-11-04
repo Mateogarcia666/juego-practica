@@ -95,6 +95,7 @@ def ingresar_numero(minimo, maximo):
 
 # 17. Mostrar menú del juego
 def mostrar_menu():
+    print("BIENVENIDO A ZOOMBIELAND")
     print("1. Iniciar juego")
     print("2. Ver ranking")
     print("3. Salir")
