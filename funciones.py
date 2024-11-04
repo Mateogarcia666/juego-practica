@@ -85,17 +85,13 @@ def ingresar_nombre_usuario():
     nombre = input("Ingrese su nombre: ")
     jugador["nombre"] = nombre
 
-# 16. Ingresar número entre dos rangos
+# Ingresar número entre dos rangos
 def ingresar_numero(minimo, maximo):
-    while True:
-        try:
-            numero = int(input(f"Ingrese un número entre {minimo} y {maximo}: "))
-            if minimo <= numero <= maximo:
-                return numero
-            else:
-                print(f"Por favor, ingrese un número entre {minimo} y {maximo}.")
-        except ValueError:
-            print("Entrada no válida. Ingrese un número entero.")
+    numero = input(f"Ingrese un número entre {minimo} y {maximo}: ")
+    while not minimo <= numero <= maximo:
+        print(f"Por favor, ingrese un número válido entre {minimo} y {maximo}.")
+        numero = input(f"Ingrese un número entre {minimo} y {maximo}: ")
+    return int(numero)
 
 # 17. Mostrar menú del juego
 def mostrar_menu():
