@@ -1,15 +1,15 @@
 import random
 jugador = {
     "nombre": '',
-    "puntaje": '',
-    "vidas": '',
+    "puntaje": 0,
+    "vidas": int(3),
     "puntos_ganados": 0,
     "puntos_perdidos": 0 
 }
 ranking = []
 
 def modificar_puntaje(jugador:dict, nuevo_puntaje:int)->bool:
-    jugador["puntaje"] += nuevo_puntaje 
+    jugador["puntaje"] += int(nuevo_puntaje) 
     print(f"Puntaje: {jugador["puntaje"]}")
 
 # 2. Modificar vidas del jugador
@@ -109,13 +109,13 @@ def calcular_porcentaje(parte, total):
 
 # 19. Verificar estado del juego
 def verificar_estado_juego(jugador):
-    return jugador["vidas"] > 0
+    return int(jugador["vidas"]) > 0
 
 # 20. Jugar juego de eliminar zombies
 def jugar_juego():
     print("¡Bienvenido al juego de eliminación de zombies!")
     ingresar_nombre_usuario()
-    partes_cuerpo = {"cabeza": 100, "torso": 50, "piernas": 20}
+    partes_cuerpo = {"cabeza": 100, "torso": 50, "brazo": 20, "piernas": 20, "pies": 10}
     
     while verificar_estado_juego(jugador):
         # Elegir aleatoriamente una parte del cuerpo a disparar
